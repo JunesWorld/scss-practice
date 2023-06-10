@@ -1,8 +1,49 @@
-/* 중첩 */
-$color: royalblue;
-
+/* 
+[중첩] 
+- 기본적으로 후손선택자
+- 자식선택자로 명시하고 싶다면 >(띄어쓰기)
+- 하지만, 우리는 기본적으로 후손선택자를 사용한다. 
+[SassMeister]
+- Sass를 Css로 변환된 것을 한눈에 보여주는 Site!
+*/
 .container {
-  h1 {
-    color: $color;
+  ul {
+    li {
+      font-size: 40px;
+      .name {
+        color: royalblue;
+      }
+      .age {
+        color: orange;
+      }
+    }
   }
+}
+
+/* 
+[& - 상위 선택자 참조]
+- 쉽게 말해 상위 선택자가 &자리에 치환되어 들어간다.
+- [css]
+- .btn.active
+- .list li:last-child
+*/
+.btn {
+  position: absolute;
+  &.active {
+    color: red;
+  }
+}
+
+.list {
+  li {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.fs {
+  &-small {font-size: 12px;}
+  &-medium {font-size: 14px;}
+  &-large {font-size: 16px;}
 }
