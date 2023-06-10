@@ -71,3 +71,29 @@
     right: 30px;
   };
 }
+
+/*
+[변수(Variables)]
+- 재활용이 되는 용도
+- 반복되는 수치 or 페이지에서 주요하게 사용되는 색상들을 사용할 때 사용
+- 유효범위
+  |- container 밖 : 전역변수
+  |- container 안 : container안에서만 사용 가능
+- 재할당 가능
+  |- 재할당 후 사용할 때는 가장 최신의 값으로 사용
+*/
+
+/* $size: 200px; */
+
+.container {
+  $size: 200px;
+  position: fixed;
+  top: $size;
+  .item {
+    $size: 100px;
+    width: $size;
+    height: $size;
+    transform: translateX($size);
+  }
+  left: $size; /* 100px */
+}
