@@ -47,3 +47,27 @@
   &-medium {font-size: 14px;}
   &-large {font-size: 16px;}
 }
+
+/* 
+[중첩된 속성]
+- 네임스페이스 : 이름을 통해 구분 가능한 범위를 만들어내는 것
+(font-, margin-, padding-)
+*/
+
+.box {
+  font: {
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  };
+  margin: {
+    top: 10px;
+    left: 20px;
+  };
+  padding: {
+    top: 10px;
+    bottom: 40px;
+    left: 20px;
+    right: 30px;
+  };
+}
