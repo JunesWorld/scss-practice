@@ -157,3 +157,26 @@
     width: 100px * $i;
   }
 }
+
+/*
+[함수]
+- @mixin VS @function
+  |- @mixin : 재활용을 위한 단순한 모음
+  |- @function : 반환된 값을 사용
+*/
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function ratio($size, $ratio) {
+  @return $size * $ratio
+}
+
+.box {
+  $width: 100px;
+  width: $width;
+  height: ratio($width, 1/2); /* ($size, $ratio) = 100 / 2*/
+  @include center;
+}
