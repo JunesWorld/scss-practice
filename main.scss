@@ -145,3 +145,15 @@
 .box {
   @include box;
 }
+
+/*
+[반복문]
+- @for
+- 보간법 사용 : #{}
+- JS와 다르게 0 베이스가 아니고 1부터 시작
+*/
+@for $i from 1 through 10 {
+  .box:nth-child(#{i}) {
+    width: 100px * $i;
+  }
+}
