@@ -116,3 +116,32 @@
   |- 동일하지 않은 단위 연산할 때 사용
     |- width: calc(100% - 200px);
 */
+
+
+/*
+[재활용(Mixins)]
+- 재활용 할 코드를 @Mixin으로 설정 후 
+- @include로 가져와 사용
+- 인수 : 함수에 데이터를 담아서 사용할 때 사용 -> (200px)
+- 매개변수(= $size)가 인수를 받아 처리
+- 인수와 매개변수 순서는 꼭 맞춰줘야한다.
+  |- ($size, $color) (80px, green) 
+- 키워드 인수
+  |- 기본값을 굳이 사용하지 않고 표현
+    |- ($color: green);
+*/
+
+@mixin box($size: 100px, $color: tomato) { /* 기본값 지정 */
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+.container {
+  @include box(200px, red);
+  .item {
+    @include box($color: green);
+  }
+}
+.box {
+  @include box;
+}
