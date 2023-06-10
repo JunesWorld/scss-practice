@@ -149,7 +149,7 @@
 /*
 [반복문]
 - @for
-- 보간법 사용 : #{}
+- 보간법 사용 = #{}
 - JS와 다르게 0 베이스가 아니고 1부터 시작
 */
 @for $i from 1 through 10 {
@@ -214,3 +214,13 @@
     background-color: mix($color, red);
   }
 }
+
+/* 
+[가져오기] 
+- @import
+- 확장자명 생략 가능
+- sub.scss 생성
+- sub2.scss 생성
+- main.scss
+  |- @import "./sub", "./sub2";
+*/
