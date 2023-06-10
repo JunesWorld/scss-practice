@@ -97,3 +97,22 @@
   }
   left: $size; /* 100px */
 }
+
+/*
+[산술 연산]
+
+1. 나누기(/)만 조심
+  |- 단축 속성 : 구분하기 위한 용도로 / 사용
+    |- font: 10px(size) / 10px(line-height) serif(font-family); 
+  |- 사용법 1 : ()
+    |- margin: (30px /2)
+  |- 사용법 2 : 변수 활용
+    |- $size: 30px;
+    |- margin: $size / 2;
+  |- 사용법 3 : 다른 산술연산자 사용
+    |- margin: (10px + 12px) /2;
+
+2. calc 함수
+  |- 동일하지 않은 단위 연산할 때 사용
+    |- width: calc(100% - 200px);
+*/
