@@ -180,3 +180,37 @@
   height: ratio($width, 1/2); /* ($size, $ratio) = 100 / 2*/
   @include center;
 }
+
+
+/*
+[색상 내장 함수]
+- HTML
+  |- <div class="box"></div>
+  |- <div class="box built-in"></div>
+- mix($color, red);
+- lighten($color, 10%);
+- darken($color, 10%);
+- 채도
+  |- saturate($color, 40%);
+  |- desaturate($color, 40%);
+- grayscale($color);
+- 색상 반전
+  |- invert($color);
+- rgba($color, 투명도);
+  |- rgba($color, .5);
+*/
+
+.box {
+  $color: royalblue;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+  &.built-in {
+    background-color: mix($color, red);
+  }
+}
