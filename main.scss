@@ -240,8 +240,26 @@ $map: (
   y: yellow
 );
 
-.box {
-  width: 100px;
-  color: red;
-  position: relative;
+/*
+[반복문 @each]
+*/
+
+/* 
+[list]
+@each $c in $list {
+  .box {
+    color: $c;
+  }
+} 
+*/
+
+/* 
+[map] 
+- $k = key
+- $v = value
+*/
+@each $k, $v in $map {
+  .box-#{$k} {
+    color: $c;
+  }
 }
